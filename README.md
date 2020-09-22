@@ -1,7 +1,7 @@
 # Smart Gym trainer
 
 Creating a Smart gym training app with **Pose Estimation** and **Pose correction** using OpenPose model tf version (tf-Pose-Estimation) 
-originally created by [1][CMU]. The tf version is developed by [2][ildoonet] (Totally loving his work)
+originally created by [CMU][1]. The tf version is developed by [ildoonet][2] (Totally loving his work)
 
 
 
