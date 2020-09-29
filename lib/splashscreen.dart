@@ -17,7 +17,15 @@ class _SplashScreenState extends State<MySplashScreen>{
       seconds: 3,
       backgroundColor: Colors.black,
       image: Image.asset('assets/stick-f.png',),
-      photoSize: 150.0,
+      photoSize: 100.0,
+      title: Text(
+        'Smart Workouts',
+        textScaleFactor: 2,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 15.0
+        ),
+      ),
       loaderColor: Colors.green,
       navigateAfterSeconds: HomePage(),
     );
