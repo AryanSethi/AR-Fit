@@ -1,5 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
+
+//  --------  HELP  -------- FUNCTION -----
+show_dialogue(context) {
+  return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AssetGiffyDialog(
+          image: Image.asset(
+            'assets/help_stick.gif',
+            fit: BoxFit.cover
+          ),
+          title: Text("Guide",
+              style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600)),
+          description: Text(
+            "Use the 'Available workouts' button to check out the full collection of workouts\nAnd use the'Analyse a video'Analyse a video' "
+                "button to score the posture of a recorded video.",
+            textAlign: TextAlign.center,
+          ),
+          entryAnimation: EntryAnimation.BOTTOM,
+          onOkButtonPressed: ()=> Navigator.of(context).pop(),
+          onlyOkButton: true,
+        );
+      });
+}
 
 class HomePage extends StatelessWidget {
   @override
@@ -10,12 +35,12 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.black,
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 20.0),
-            child: GestureDetector(
-                onTap: () => {},
-                child: Icon(
-                    Icons.help, size: 30.0
-                )
+            padding: EdgeInsets.only(right: 10.0),
+            child: IconButton(
+              onPressed: () => {show_dialogue(context)},
+              iconSize: 30.0,
+              tooltip: "Help",
+              icon: Icon(Icons.help),
             ),
           )
         ],
@@ -34,10 +59,10 @@ class HomePage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
                   ),
-                  color: Colors.blueAccent,
+                  color: Colors.red,
                   padding: EdgeInsets.all(15.0),
                   onPressed: () => {},
-                  child: Text('Available Workouts',
+                  child: Text('All Workouts',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 30,
@@ -52,7 +77,7 @@ class HomePage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
                   ),
-                  color: Colors.blueAccent,
+                  color: Colors.red,
                   padding: EdgeInsets.all(15.0),
                   onPressed: () => {},
                   child: Text('Analyse a video',

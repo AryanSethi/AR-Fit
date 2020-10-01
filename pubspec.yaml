@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   splashscreen: ^1.2.0
+  giffy_dialog: ^1.8.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -48,6 +49,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - stick-f.png
+    - help_stick.gif
+    -
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
