@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-import 'package:pose_est_app/home_page.dart';
+import 'package:Smart_Workouts/home_page.dart';
 
 class MySplashScreen extends StatefulWidget{
   @override
@@ -10,7 +10,6 @@ class MySplashScreen extends StatefulWidget{
 }
 
 class _SplashScreenState extends State<MySplashScreen>{
-
   @override
   Widget build(BuildContext context) {
     return SplashScreen(

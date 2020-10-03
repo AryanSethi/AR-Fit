@@ -1,29 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
+import 'package:Smart_Workouts/camera.dart';
+import 'package:Smart_Workouts/camera.dart';
+
 
 //  --------  HELP  -------- FUNCTION -----
 show_dialogue(context) {
+  var screenSize = MediaQuery.of(context).size;
   return showDialog(
       context: context,
       builder: (BuildContext context) {
-        return AssetGiffyDialog(
-          image: Image.asset(
-            'assets/help_stick.gif',
-            fit: BoxFit.cover
+        return Container(
+          width: screenSize.height,
+          height: screenSize.width,
+
+          child: AssetGiffyDialog(
+            image: Image.asset(
+              'assets/help_stick.gif',
+              fit: BoxFit.cover
+            ),
+            title: Text("Guide",
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600)),
+            description: Text(
+              "Use the 'Available workouts' button to check out the full collection of workouts\nAnd use the'Analyse a video'Analyse a video' "
+                  "button to score the posture of a recorded video.",
+              textAlign: TextAlign.center,
+            ),
+            entryAnimation: EntryAnimation.BOTTOM,
+            onOkButtonPressed: ()=> Navigator.of(context).pop(),
+            onlyOkButton: true,
           ),
-          title: Text("Guide",
-              style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600)),
-          description: Text(
-            "Use the 'Available workouts' button to check out the full collection of workouts\nAnd use the'Analyse a video'Analyse a video' "
-                "button to score the posture of a recorded video.",
-            textAlign: TextAlign.center,
-          ),
-          entryAnimation: EntryAnimation.BOTTOM,
-          onOkButtonPressed: ()=> Navigator.of(context).pop(),
-          onlyOkButton: true,
         );
       });
+}
+
+
+Camera_call(context){
+  Navigator.pushNamed(context, '/Camera');
 }
 
 class HomePage extends StatelessWidget {
@@ -57,7 +71,7 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.all(20.0),
               child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
+                    borderRadius: BorderRadius.circular(5.0),
                   ),
                   color: Colors.red,
                   padding: EdgeInsets.all(15.0),
@@ -75,7 +89,7 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.all(20.0),
               child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
+                    borderRadius: BorderRadius.circular(5.0),
                   ),
                   color: Colors.red,
                   padding: EdgeInsets.all(15.0),
@@ -92,7 +106,7 @@ class HomePage extends StatelessWidget {
       ),
       backgroundColor: Colors.white10,
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
+        onPressed: ()=> Camera_call(context),
         backgroundColor: Colors.green,
         tooltip: 'Camera',
         child: const Icon(Icons.camera_alt),
