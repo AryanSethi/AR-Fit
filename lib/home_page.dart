@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
-import 'package:Smart_Workouts/camera.dart';
-import 'package:Smart_Workouts/camera.dart';
-
+import 'package:Smart_Workouts/workouts.dart';
 
 //  --------  HELP  -------- FUNCTION -----
 show_dialogue(context) {
@@ -14,29 +12,24 @@ show_dialogue(context) {
         return Container(
           width: screenSize.height,
           height: screenSize.width,
-
           child: AssetGiffyDialog(
-            image: Image.asset(
-              'assets/help_stick.gif',
-              fit: BoxFit.cover
-            ),
+            image: Image.asset('assets/help_stick.gif', fit: BoxFit.cover),
             title: Text("Guide",
                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600)),
             description: Text(
               "Use the 'Available workouts' button to check out the full collection of workouts\nAnd use the'Analyse a video'Analyse a video' "
-                  "button to score the posture of a recorded video.",
+              "button to score the posture of a recorded video.",
               textAlign: TextAlign.center,
             ),
             entryAnimation: EntryAnimation.BOTTOM,
-            onOkButtonPressed: ()=> Navigator.of(context).pop(),
+            onOkButtonPressed: () => Navigator.of(context).pop(),
             onlyOkButton: true,
           ),
         );
       });
 }
 
-
-Camera_call(context){
+Camera_call(context) {
   Navigator.pushNamed(context, '/Camera');
 }
 
@@ -59,6 +52,21 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
+      backgroundColor: Colors.white10,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Camera_call(context),
+        backgroundColor: Colors.green,
+        tooltip: 'Camera',
+        child: const Icon(Icons.camera_alt),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white12,
+        shape: const CircularNotchedRectangle(),
+        child: Container(
+          height: 70.0,
+        ),
+      ),
       body: Container(
         alignment: Alignment.center,
         child: Column(
@@ -73,14 +81,16 @@ class HomePage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5.0),
                   ),
-                  color: Colors.red,
+                  color: Colors.grey[400],
                   padding: EdgeInsets.all(15.0),
-                  onPressed: () => {},
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/All Workouts');
+                  },
                   child: Text('All Workouts',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 30,
-                        color: Colors.white,
+                        color: Colors.black,
                       ))),
             ),
             Container(
@@ -91,32 +101,17 @@ class HomePage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5.0),
                   ),
-                  color: Colors.red,
+                  color: Colors.grey[400],
                   padding: EdgeInsets.all(15.0),
                   onPressed: () => {},
                   child: Text('Analyse a video',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 30,
-                        color: Colors.white,
+                        color: Colors.black,
                       ))),
             ),
           ],
-        ),
-      ),
-      backgroundColor: Colors.white10,
-      floatingActionButton: FloatingActionButton(
-        onPressed: ()=> Camera_call(context),
-        backgroundColor: Colors.green,
-        tooltip: 'Camera',
-        child: const Icon(Icons.camera_alt),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.white12,
-        shape: const CircularNotchedRectangle(),
-        child: Container(
-          height: 70.0,
         ),
       ),
     );

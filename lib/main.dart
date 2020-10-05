@@ -1,3 +1,4 @@
+import 'package:Smart_Workouts/workouts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:Smart_Workouts/splashscreen.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget{
       home: MySplashScreen(),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
-        '/Camera': (context) => CameraScreen()
+        '/Camera': (context) => CameraScreen(),
+        '/All Workouts':(context) => Workouts()
       },
     );
   }
