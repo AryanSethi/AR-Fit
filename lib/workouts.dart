@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 var workout_descriptions = {
-  "Mountain Pose" : "THE bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ",
-  "Raised Arms Pose" : "THE bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ",
-  "Standing Forward Bend" : "THE bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ",
-  "Garland Pose" : "THE bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ",
-  "Lunge" : "THE bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ",
-  "Plank" : "THE bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ",
-  "Seated Forward Bend" : "THE bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ",
+  "Mountain Pose" : "Improve your posture and body awareness. Strengthen your legs and establish good alignment.",
+  "Raised Arms Pose" : "Improve your digestion and tone the muscles of the abdomen. Easy pose but highly effective.",
+  "Standing Forward Bend" : "Calm your mind and get rid of all the stress. Make your legs stronger too.",
+  "Garland Pose" : "Aid your Digestion and strengthen your metabolism.",
+  "Lunge" : "Increase your stability and hip flexibility. Build a stronger and more stable core.",
+  "Plank" : "Build a stronger and more stable posture along with astronger bdominal muscles.",
+  "Seated Forward Bend" : "Relieve your stress, anxiety and fatigue. Improve your overall body strength",
 };
 
 create_card(context, String workout) {
@@ -25,32 +25,33 @@ create_card(context, String workout) {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(9),
-            color: Colors.blueGrey[600],
+            color: Colors.green[300],
           ),
           padding: EdgeInsets.all(15.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Wrap(
+            direction: Axis.horizontal,
+            //crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(5),
                 child: Text(
                   workout,
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontWeight: FontWeight.w900,
-                    fontSize: 25
+                    fontSize: 19
                   ),
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.fromLTRB(5, 2, 0, 0),
                   child: Text(
                     workout_descriptions[workout],
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontWeight: FontWeight.w400,
-                        fontSize: 15
+                        fontSize: 13
                     ),
                   )
               )
@@ -61,6 +62,11 @@ create_card(context, String workout) {
     ),
   );
 }
+
+
+
+
+
 
 class Workouts extends StatelessWidget {
   @override

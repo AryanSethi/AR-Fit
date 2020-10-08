@@ -1,4 +1,6 @@
+import 'package:Smart_Workouts/image_picker.dart';
 import 'package:Smart_Workouts/workouts.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:Smart_Workouts/splashscreen.dart';
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
         '/Camera': (context) => CameraScreen(),
-        '/All Workouts':(context) => Workouts()
+        '/All Workouts':(context) => Workouts(),
       },
     );
   }

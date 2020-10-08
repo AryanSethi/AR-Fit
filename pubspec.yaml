@@ -28,6 +28,9 @@ dependencies:
   camera: ^0.5.2+1
   path_provider: ^1.1.0
   path: ^1.6.2
+  image_picker: ^0.6.6+5
+  video_player: ^0.10.2+1
+  tflite: 1.0.4
 
 
 

@@ -1,7 +1,7 @@
+import 'package:Smart_Workouts/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
-import 'package:Smart_Workouts/workouts.dart';
 
 //  --------  HELP  -------- FUNCTION -----
 show_dialogue(context) {
@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5.0),
                   ),
-                  color: Colors.grey[400],
+                  color: Colors.blueGrey[500],
                   padding: EdgeInsets.all(15.0),
                   onPressed: (){
                     Navigator.pushNamed(context, '/All Workouts');
@@ -101,9 +101,11 @@ class HomePage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5.0),
                   ),
-                  color: Colors.grey[400],
+                  color: Colors.blueGrey[500],
                   padding: EdgeInsets.all(15.0),
-                  onPressed: () => {},
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/Image_Picker');
+                  },
                   child: Text('Analyse a video',
                       textAlign: TextAlign.center,
                       style: TextStyle(
