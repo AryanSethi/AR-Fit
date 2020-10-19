@@ -35,7 +35,7 @@ packages:
       name: camera
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.8+7"
+    version: "0.5.8+8"
   characters:
     dependency: transitive
     description:
@@ -176,7 +176,7 @@ packages:
       name: image
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.14"
+    version: "2.1.18"
   image_picker:
     dependency: "direct main"
     description:

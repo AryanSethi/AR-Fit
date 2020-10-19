@@ -1,16 +1,25 @@
-import 'package:Smart_Workouts/image_picker.dart';
+import 'package:Smart_Workouts/camera.dart';
 import 'package:Smart_Workouts/workouts.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:Smart_Workouts/splashscreen.dart';
-import 'package:Smart_Workouts/camera.dart';
 
-void main() {
+List<CameraDescription> cameras;
+
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    cameras = await availableCameras();
+  } on CameraException catch (e) {
+    print('Error: $e.code\nError Message: $e.message');
+  }
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget{
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -23,11 +32,11 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: MySplashScreen(),
+      home: MySplashScreen(cameras),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
-        '/Camera': (context) => CameraScreen(),
         '/All Workouts':(context) => Workouts(),
+        '/Camera':(context)=>CameraScreen(cameras)
       },
     );
   }

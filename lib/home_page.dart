@@ -1,9 +1,9 @@
-import 'package:Smart_Workouts/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
+import 'package:tflite/tflite.dart';
 
-//  --------  HELP  -------- FUNCTION -----
+//  --------  GIFFY  -------- FUNCTION -----
 show_dialogue(context) {
   var screenSize = MediaQuery.of(context).size;
   return showDialog(
@@ -17,8 +17,7 @@ show_dialogue(context) {
             title: Text("Guide",
                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600)),
             description: Text(
-              "Use the 'Available workouts' button to check out the full collection of workouts\nAnd use the'Analyse a video'Analyse a video' "
-              "button to score the posture of a recorded video.",
+              "Perform your daily Yoga in the most perfect form and posture easily by analysing your videos and we will take care of the rest",
               textAlign: TextAlign.center,
             ),
             entryAnimation: EntryAnimation.BOTTOM,
@@ -29,11 +28,37 @@ show_dialogue(context) {
       });
 }
 
-Camera_call(context) {
-  Navigator.pushNamed(context, '/Camera');
+
+
+
+class HomePage extends StatefulWidget {
+  final List cameras;
+  HomePage(this.cameras);
+
+  @override
+  _HomePage createState() => _HomePage();
 }
 
-class HomePage extends StatelessWidget {
+class _HomePage extends State<HomePage> {
+  List<dynamic> _recognitions;
+  bool selected = false;
+
+
+  loadModel() async{
+   String res = await Tflite.loadModel(
+        model: 'assets/posenet_mv1_075_float_from_checkpoints.tflite'
+   );
+    print(res);
+  }
+
+
+
+  setRecognitions(recognitions) {
+    setState(() {
+      _recognitions = recognitions;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -54,7 +79,9 @@ class HomePage extends StatelessWidget {
       ),
       backgroundColor: Colors.white10,
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Camera_call(context),
+        onPressed: (){
+          Navigator.pushNamed(context, '/Camera');
+        },
         backgroundColor: Colors.green,
         tooltip: 'Camera',
         child: const Icon(Icons.camera_alt),
@@ -79,9 +106,9 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.all(20.0),
               child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
-                  color: Colors.blueGrey[500],
+                  color: Colors.purple[300],
                   padding: EdgeInsets.all(15.0),
                   onPressed: (){
                     Navigator.pushNamed(context, '/All Workouts');
@@ -99,13 +126,11 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.all(20.0),
               child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
-                  color: Colors.blueGrey[500],
+                  color: Colors.purple[300],
                   padding: EdgeInsets.all(15.0),
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/Image_Picker');
-                  },
+                  onPressed: (){},
                   child: Text('Analyse a video',
                       textAlign: TextAlign.center,
                       style: TextStyle(
