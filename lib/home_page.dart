@@ -40,7 +40,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
-  List<dynamic> _recognitions;
+
   bool selected = false;
 
 
@@ -48,19 +48,21 @@ class _HomePage extends State<HomePage> {
    String res = await Tflite.loadModel(
         model: 'assets/posenet_mv1_075_float_from_checkpoints.tflite'
    );
-    print(res);
   }
 
 
+//
+//  setRecognitions(recognitions) {
+//    setState(() {
+//      _recognitions = recognitions;
+//    });
+//  }
 
-  setRecognitions(recognitions) {
-    setState(() {
-      _recognitions = recognitions;
-    });
-  }
+
 
   @override
   Widget build(BuildContext context) {
+    loadModel();
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(

@@ -1,10 +1,13 @@
+import 'package:Smart_Workouts/keypoints.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
 
+typedef void Callback(List<dynamic> list);
 
 class CameraScreen extends StatefulWidget {
   final List cameras;
+  List<dynamic> _recognitions;
 
   CameraScreen(this.cameras);
 
@@ -45,7 +48,7 @@ class _CameraScreen extends State<CameraScreen> {
               numResults: 2,
             ).then((recognitions) {
               setState(() {
-                print("SET STATE");
+                widget._recognitions = recognitions;
               });
               isDetecting = false;
             });
@@ -74,10 +77,18 @@ class _CameraScreen extends State<CameraScreen> {
       return Container();
     }
 
-    return OverflowBox(
-      maxHeight: screenSize.height/1.2,
-      maxWidth: screenSize.width/1.2,
-      child: CameraPreview(controller),
+    var previewH = screenSize.height;
+    var previewW = screenSize.width;
+
+    return Stack(
+      children: [
+        OverflowBox(
+          maxHeight: screenSize.height,
+          maxWidth: screenSize.width,
+          child: CameraPreview(controller),
+        ),
+        Keypoints(widget._recognitions,previewH,previewW)
+      ],
     );
   }
 

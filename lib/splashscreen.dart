@@ -20,7 +20,7 @@ class _SplashScreenState extends State<MySplashScreen>{
       seconds: 1,
       backgroundColor: Colors.black,
       image: Image.asset('assets/stick-f.png',),
-      photoSize: 100.0,
+      photoSize: 80.0,
       title: Text(
         'Smart Workouts',
         textScaleFactor: 2,
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<MySplashScreen>{
         ),
       ),
       loaderColor: Colors.green,
-      navigateAfterSeconds: HomePage(cameras),
+      navigateAfterSeconds: HomePage(widget.cameras),
     );
   }
 }

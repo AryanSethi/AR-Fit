@@ -12,6 +12,7 @@ Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   try {
     cameras = await availableCameras();
+    print("CAMERA LIST FOUND");
   } on CameraException catch (e) {
     print('Error: $e.code\nError Message: $e.message');
   }
