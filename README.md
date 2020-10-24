@@ -1,10 +1,8 @@
 # Smart Gym trainer
 
-Creating a Smart gym training app with **Pose Estimation** and **Pose correction** using Posenet model.
+A Smart Yoga training application developed with flutter.
+The application performs **Pose Estimation** using pretrained tfLite Posenet model and then gives a percentage score for its correctness.
 
 
 
 
-
-[1]: https://github.com/CMU-Perceptual-Computing-Lab/openpose "CMU"
-[2]: https://github.com/ildoonet/tf-pose-estimation "ildoonet"
