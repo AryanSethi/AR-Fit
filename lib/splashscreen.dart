@@ -4,8 +4,6 @@ import 'package:splashscreen/splashscreen.dart';
 import 'package:Smart_Workouts/home_page.dart';
 
 class MySplashScreen extends StatefulWidget{
-  List cameras;
-  MySplashScreen(this.cameras);
 
   @override
   State<StatefulWidget> createState(){
@@ -30,7 +28,7 @@ class _SplashScreenState extends State<MySplashScreen>{
         ),
       ),
       loaderColor: Colors.green,
-      navigateAfterSeconds: HomePage(widget.cameras),
+      navigateAfterSeconds: HomePage(),
     );
   }
 }

@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: MySplashScreen(cameras),
+      home: MySplashScreen(),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
         '/All Workouts':(context) => Workouts(),

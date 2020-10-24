@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Keypoints extends StatelessWidget{
-  List<dynamic> results;
-  var previewH;
-  var previewW;
+  final List<dynamic> results;
+  final previewH;
+  final previewW;
 
   Keypoints(this.results,this.previewH,this.previewW);
 
@@ -17,7 +17,8 @@ class Keypoints extends StatelessWidget{
 
     List<Widget> _renderKeypoints() {
       var lists = <Widget>[];
-      results.forEach((re) {
+
+      results !=null ? results.forEach((re) {
         var list = re["keypoints"].values.map<Widget>((k) {
           var _x = k["x"];
           var _y = k["y"];
@@ -54,7 +55,7 @@ class Keypoints extends StatelessWidget{
         }).toList();
 
         lists..addAll(list);
-      });
+      }): print("wait") ;
 
       return lists;
     }

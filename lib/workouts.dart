@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:Smart_Workouts/colors.dart';
+import 'dart:math';
 
 var workout_descriptions = {
   "Mountain Pose" : "Improve your posture and body awareness. Strengthen your legs and establish good alignment.",
@@ -11,7 +13,10 @@ var workout_descriptions = {
   "Seated Forward Bend" : "Relieve your stress, anxiety and fatigue. Improve your overall body strength",
 };
 
+List random_colors = [purple,yellow,red,red2,blue,blue2,orange,green,brown];
+
 create_card(context, String workout) {
+  Random random = new Random();
   var screenSize = MediaQuery.of(context).size;
   return Container(
     padding: EdgeInsets.all(5.0),
@@ -25,7 +30,7 @@ create_card(context, String workout) {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(9),
-            color: Colors.green[300],
+            color: random_colors[random.nextInt(8)],
           ),
           padding: EdgeInsets.all(15.0),
           child: Wrap(

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:tflite/tflite.dart';
+import 'package:Smart_Workouts/colors.dart';
+import 'dart:math';
+
+List random_colors = [purple,yellow,red,red2,blue,blue2,orange,green,brown];
 
 //  --------  GIFFY  -------- FUNCTION -----
 show_dialogue(context) {
@@ -32,8 +36,6 @@ show_dialogue(context) {
 
 
 class HomePage extends StatefulWidget {
-  final List cameras;
-  HomePage(this.cameras);
 
   @override
   _HomePage createState() => _HomePage();
@@ -42,21 +44,13 @@ class HomePage extends StatefulWidget {
 class _HomePage extends State<HomePage> {
 
   bool selected = false;
-
+  Random random = new Random();
 
   loadModel() async{
    String res = await Tflite.loadModel(
         model: 'assets/posenet_mv1_075_float_from_checkpoints.tflite'
    );
   }
-
-
-//
-//  setRecognitions(recognitions) {
-//    setState(() {
-//      _recognitions = recognitions;
-//    });
-//  }
 
 
 
@@ -103,14 +97,14 @@ class _HomePage extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: screenSize.width / 1.5,
-              height: screenSize.height / 7,
+              width: screenSize.width*0.5,
+              height: screenSize.height*0.15,
               margin: EdgeInsets.all(20.0),
               child: RaisedButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
-                  color: Colors.purple[300],
+                  color: random_colors[random.nextInt(8)],
                   padding: EdgeInsets.all(15.0),
                   onPressed: (){
                     Navigator.pushNamed(context, '/All Workouts');
@@ -118,25 +112,25 @@ class _HomePage extends State<HomePage> {
                   child: Text('All Workouts',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: screenSize.width*0.07,
                         color: Colors.black,
                       ))),
             ),
             Container(
-              width: screenSize.width / 1.5,
-              height: screenSize.height / 7,
+              width: screenSize.width*0.7,
+              height: screenSize.height*0.15,
               margin: EdgeInsets.all(20.0),
               child: RaisedButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
-                  color: Colors.purple[300],
+                  color: random_colors[random.nextInt(8)],
                   padding: EdgeInsets.all(15.0),
                   onPressed: (){},
                   child: Text('Analyse a video',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: screenSize.width*0.07,
                         color: Colors.black,
                       ))),
             ),
