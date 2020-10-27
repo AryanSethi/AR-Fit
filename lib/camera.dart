@@ -8,7 +8,6 @@ typedef void Callback(List<dynamic> list);
 class CameraScreen extends StatefulWidget {
   final List cameras;
   List<dynamic> _recognitions;
-
   CameraScreen(this.cameras);
 
   @override
@@ -29,6 +28,7 @@ class _CameraScreen extends State<CameraScreen> {
       controller = new CameraController(
         widget.cameras[0],
         ResolutionPreset.high,
+        enableAudio: false
       );
       controller.initialize().then((_) {
         if (!mounted) {
@@ -47,9 +47,11 @@ class _CameraScreen extends State<CameraScreen> {
               imageWidth: img.width,
               numResults: 2,
             ).then((recognitions) {
-              setState(() {
-                widget._recognitions = recognitions;
-              });
+              if(mounted){
+                setState(() {
+                  widget._recognitions = recognitions;
+                });
+              }
               isDetecting = false;
             });
           }
@@ -91,20 +93,6 @@ class _CameraScreen extends State<CameraScreen> {
       ],
     );
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tflite/tflite.dart';
 import 'package:Smart_Workouts/colors.dart';
 import 'dart:math';
@@ -18,10 +19,18 @@ show_dialogue(context) {
           height: screenSize.width,
           child: AssetGiffyDialog(
             image: Image.asset('assets/help_stick.gif', fit: BoxFit.cover),
-            title: Text("Guide",
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600)),
+            title: Text("Keep in Mind",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w800
+                )
+            ),
             description: Text(
-              "Perform your daily Yoga in the most perfect form and posture easily by analysing your videos and we will take care of the rest",
+              "● Only one person should be in frame\n● Good lighting = Better results\n● Whole body should be vissible",
+              style: TextStyle(
+                color: Colors.blueAccent,
+                fontWeight: FontWeight.w600
+              ),
               textAlign: TextAlign.center,
             ),
             entryAnimation: EntryAnimation.BOTTOM,
@@ -43,20 +52,29 @@ class HomePage extends StatefulWidget {
 
 class _HomePage extends State<HomePage> {
 
+  name_fetcher() async{
+    final prefs = await SharedPreferences.getInstance();
+
+    prefs.getString('name') == null ?
+        print("NO NAME"):
+    print(prefs.getString('name'));
+  }
+
   bool selected = false;
   Random random = new Random();
 
-  loadModel() async{
-   String res = await Tflite.loadModel(
-        model: 'assets/posenet_mv1_075_float_from_checkpoints.tflite'
-   );
-  }
+//  loadModel() async{
+//   String res = await Tflite.loadModel(
+//        model: 'assets/posenet_mv1_075_float_from_checkpoints.tflite'
+//   );
+//  }
 
 
 
   @override
   Widget build(BuildContext context) {
-    loadModel();
+    name_fetcher();
+//    loadModel();
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
