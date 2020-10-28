@@ -59,7 +59,8 @@ flutter:
   assets:
     - assets/stick-f.png
     - assets/help_stick.gif
-    - assets/posenet_mv1_075_float_from_checkpoints.tflite
+    - assets/good.tflite
+    - assets/best.tflite
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

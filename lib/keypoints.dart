@@ -40,14 +40,14 @@ class Keypoints extends StatelessWidget{
           return Positioned(
             left: x ,
             top: y,
-            width: 120,
-            height: 12,
+            height: 120,
+            width: 12,
             child: Container(
               child: Text(
                 "●",
                 style: TextStyle(
                   color: Color.fromRGBO(255, 0, 0, 1.0),
-                  fontSize: 12.0,
+                  fontSize: 5.0,
                 ),
               ),
             ),

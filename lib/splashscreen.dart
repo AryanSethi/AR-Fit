@@ -17,7 +17,7 @@ class _SplashScreenState extends State<MySplashScreen>{
   Widget build(BuildContext context) {
     loadModel() async{
       String res = await Tflite.loadModel(
-          model: 'assets/posenet_mv1_075_float_from_checkpoints.tflite'
+          model: 'assets/good.tflite'
       );
     }
     loadModel();

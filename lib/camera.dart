@@ -44,8 +44,8 @@ class _CameraScreen extends State<CameraScreen> {
                 return plane.bytes;
               }).toList(),
               imageHeight: img.height,
-              imageWidth: img.width,
-              numResults: 2,
+              imageWidth:  img.width ,
+              numResults: 1,
             ).then((recognitions) {
               if(mounted){
                 setState(() {
