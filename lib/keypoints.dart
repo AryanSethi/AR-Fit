@@ -47,7 +47,7 @@ class Keypoints extends StatelessWidget{
                 "●",
                 style: TextStyle(
                   color: Color.fromRGBO(255, 0, 0, 1.0),
-                  fontSize: 5.0,
+                  fontSize: 10.0,
                 ),
               ),
             ),

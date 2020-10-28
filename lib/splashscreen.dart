@@ -22,7 +22,7 @@ class _SplashScreenState extends State<MySplashScreen>{
     }
     loadModel();
     return SplashScreen(
-      seconds: 2,
+      seconds: 3,
       backgroundColor: Colors.black,
       image: Image.asset('assets/stick-f.png',),
       photoSize: 80.0,

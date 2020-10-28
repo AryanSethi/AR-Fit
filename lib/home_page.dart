@@ -65,7 +65,7 @@ class _HomePage extends State<HomePage> {
 
 //  loadModel() async{
 //   String res = await Tflite.loadModel(
-//        model: 'assets/posenet_mv1_075_float_from_checkpoints.tflite'
+//        model: 'assets/good.tflite'
 //   );
 //  }
 
