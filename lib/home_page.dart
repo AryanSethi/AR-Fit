@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tflite/tflite.dart';
 import 'package:Smart_Workouts/colors.dart';
 import 'dart:math';
 
@@ -10,13 +9,10 @@ List random_colors = [purple,yellow,red,red2,blue,blue2,orange,green,brown];
 
 //  --------  GIFFY  -------- FUNCTION -----
 show_dialogue(context) {
-  var screenSize = MediaQuery.of(context).size;
   return showDialog(
       context: context,
       builder: (BuildContext context) {
         return Container(
-          width: screenSize.height,
-          height: screenSize.width,
           child: AssetGiffyDialog(
             image: Image.asset('assets/help_stick.gif', fit: BoxFit.cover),
             title: Text("Keep in Mind",
@@ -26,7 +22,7 @@ show_dialogue(context) {
                 )
             ),
             description: Text(
-              "● Only one person should be in frame\n● Good lighting = Better results\n● Whole body should be vissible",
+              "● Only one person should be in frame\n● Use Portrait Mode only\n● Whole body should be vissible",
               style: TextStyle(
                 color: Colors.blueAccent,
                 fontWeight: FontWeight.w600

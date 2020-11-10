@@ -60,6 +60,7 @@ flutter:
     - assets/stick-f.png
     - assets/help_stick.gif
     - assets/good.tflite
+    - assets/poses/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

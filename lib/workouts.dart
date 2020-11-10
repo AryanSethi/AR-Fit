@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:Smart_Workouts/colors.dart';
 import 'dart:math';
+import 'package:giffy_dialog/giffy_dialog.dart';
 
 var workout_descriptions = {
   "Mountain Pose" : "Improve your posture and body awareness. Strengthen your legs and establish good alignment.",
@@ -13,6 +14,17 @@ var workout_descriptions = {
   "Seated Forward Bend" : "Relieve your stress, anxiety and fatigue. Improve your overall body strength",
 };
 
+var workout_method = {
+  "Mountain Pose" : "DO THIS DO THAT DO THIS",
+  "Raised Arms Pose" : "YE BHI SAHI HAI BC",
+  "Standing Forward Bend" : "KARLO BC YE BHI",
+  "Garland Pose" : "Aid your Digestion and strengthen your metabolism.",
+  "Lunge" : "KARLO BC YE BHI",
+  "Plank" : "KARLO BC YE BHI",
+  "Seated Forward Bend" : "KARLO BC YE BHI",
+};
+
+
 List random_colors = [purple,yellow,red,red2,blue,blue2,orange,green,brown];
 
 create_card(context, String workout) {
@@ -22,9 +34,11 @@ create_card(context, String workout) {
     padding: EdgeInsets.all(5.0),
     margin: EdgeInsets.all(3.0),
     width: screenSize.width,
-    height: screenSize.height / 5,
+    height: screenSize.height*0.2,
     child: GestureDetector(
-      onTap: ()=>{},
+      onTap: (){
+        return show_dialogue(context, workout);
+      },
       child: Card(
         color: Colors.black,
         child: Container(
@@ -66,6 +80,51 @@ create_card(context, String workout) {
       ),
     ),
   );
+}
+
+
+
+
+show_dialogue(context,String workout) {
+  String image_name = 'assets/poses/${workout}.gif';
+  return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          child: Column(
+            children: [
+              AssetGiffyDialog(
+                image: Image.asset(image_name, fit: BoxFit.cover),
+                title: Text(workout,
+                    style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w800
+                    )
+                ),
+                description: Text(
+                  workout_method[workout],
+                  style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontWeight: FontWeight.w600
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                entryAnimation: EntryAnimation.BOTTOM,
+                onOkButtonPressed: () => Navigator.of(context).pop(),
+                onlyOkButton: true,
+              ),
+              FloatingActionButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/Camera');
+                  },
+                  backgroundColor: Colors.green,
+                  tooltip: 'Camera',
+                  child: const Icon(Icons.camera_alt),
+              )
+            ],
+          ),
+        );
+      });
 }
 
 
