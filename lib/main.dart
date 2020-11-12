@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
         '/All Workouts':(context) => Workouts(),
-        '/Camera':(context)=>CameraScreen(cameras)
+        '/Camera':(context)=> CameraScreen(cameras)
       },
     );
   }

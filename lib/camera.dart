@@ -2,6 +2,7 @@ import 'package:Smart_Workouts/keypoints.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
+import 'package:Smart_Workouts/workouts.dart';
 
 typedef void Callback(List<dynamic> list);
 
@@ -71,9 +72,10 @@ class _CameraScreen extends State<CameraScreen> {
 
 
 
-  //      B   U   I   L   D           M    E    T    H    O    D
+  ///      B   U   I   L   D           M    E    T    H    O    D
   @override
   Widget build(BuildContext context) {
+    final Workout_name args = ModalRoute.of(context).settings.arguments;             /// ARGS SUCCESSFULLY RECEIVED HERE
     var screenSize = MediaQuery.of(context).size;
     if (controller == null || !controller.value.isInitialized) {
       return Container();
@@ -89,7 +91,8 @@ class _CameraScreen extends State<CameraScreen> {
           maxWidth: screenSize.width,
           child: CameraPreview(controller),
         ),
-        Keypoints(widget._recognitions,previewH,previewW)
+        Keypoints(widget._recognitions,previewH,previewW),
+        Text('lol')
       ],
     );
   }

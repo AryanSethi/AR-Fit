@@ -22,7 +22,7 @@ show_dialogue(context) {
                 )
             ),
             description: Text(
-              "● Only one person should be in frame\n● Use Portrait Mode only\n● Whole body should be vissible",
+              "● Only one person should be in frame\n● Use Portrait Mode only\n● Recording should be done as instructed",
               style: TextStyle(
                 color: Colors.blueAccent,
                 fontWeight: FontWeight.w600
@@ -38,39 +38,30 @@ show_dialogue(context) {
 }
 
 
-
-
 class HomePage extends StatefulWidget {
 
   @override
   _HomePage createState() => _HomePage();
 }
 
+
 class _HomePage extends State<HomePage> {
 
-  name_fetcher() async{
-    final prefs = await SharedPreferences.getInstance();
-
-    prefs.getString('name') == null ?
-        print("NO NAME"):
-    print(prefs.getString('name'));
-  }
-
-  bool selected = false;
-  Random random = new Random();
-
-//  loadModel() async{
-//   String res = await Tflite.loadModel(
-//        model: 'assets/good.tflite'
-//   );
+//  name_fetcher() async{
+//    String user;
+//    final prefs = await SharedPreferences.getInstance();
+//
+//    prefs.getString('name') == null ?
+//    user='User':
+//    user = prefs.getString('name');
+//    return user;
 //  }
 
 
+  Random random = new Random();
 
   @override
   Widget build(BuildContext context) {
-    name_fetcher();
-//    loadModel();
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(

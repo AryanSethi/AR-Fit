@@ -24,6 +24,11 @@ var workout_method = {
   "Seated Forward Bend" : "KARLO BC YE BHI",
 };
 
+class Workout_name{
+  final String workout_name;
+  Workout_name(this.workout_name);
+}
+
 
 List random_colors = [purple,yellow,red,red2,blue,blue2,orange,green,brown];
 
@@ -115,7 +120,10 @@ show_dialogue(context,String workout) {
               ),
               FloatingActionButton(
                   onPressed: (){
-                    Navigator.pushNamed(context, '/Camera');
+                    Navigator.pushNamed(context,
+                        '/Camera',
+                      arguments: Workout_name(workout)
+                    );
                   },
                   backgroundColor: Colors.green,
                   tooltip: 'Camera',
