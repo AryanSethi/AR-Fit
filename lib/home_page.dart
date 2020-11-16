@@ -79,15 +79,7 @@ class _HomePage extends State<HomePage> {
         ],
       ),
       backgroundColor: Colors.white10,
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          Navigator.pushNamed(context, '/Camera');
-        },
-        backgroundColor: Colors.green,
-        tooltip: 'Camera',
-        child: const Icon(Icons.camera_alt),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
       bottomNavigationBar: BottomAppBar(
         color: Colors.white12,
         shape: const CircularNotchedRectangle(),

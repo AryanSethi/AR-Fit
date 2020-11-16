@@ -75,7 +75,8 @@ class _CameraScreen extends State<CameraScreen> {
   ///      B   U   I   L   D           M    E    T    H    O    D
   @override
   Widget build(BuildContext context) {
-    final Workout_name args = ModalRoute.of(context).settings.arguments;             /// ARGS SUCCESSFULLY RECEIVED HERE
+    final Workout_name args = ModalRoute.of(context).settings.arguments;         /// ARGS SUCCESSFULLY RECEIVED HERE
+    String w_n = args.workout_name;
     var screenSize = MediaQuery.of(context).size;
     if (controller == null || !controller.value.isInitialized) {
       return Container();
@@ -92,7 +93,9 @@ class _CameraScreen extends State<CameraScreen> {
           child: CameraPreview(controller),
         ),
         Keypoints(widget._recognitions,previewH,previewW),
-        Text('lol')
+        w_n !=null ?
+            Text(w_n):
+            Text('_')
       ],
     );
   }

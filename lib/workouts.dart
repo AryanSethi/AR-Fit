@@ -24,9 +24,11 @@ var workout_method = {
   "Seated Forward Bend" : "KARLO BC YE BHI",
 };
 
+
+/// CLASS FOR PASSING WORKOUT NAME ARGUMENT TO THE NAVIGATOR
 class Workout_name{
   final String workout_name;
-  Workout_name(this.workout_name);
+  Workout_name({this.workout_name=null});
 }
 
 
@@ -122,7 +124,7 @@ show_dialogue(context,String workout) {
                   onPressed: (){
                     Navigator.pushNamed(context,
                         '/Camera',
-                      arguments: Workout_name(workout)
+                      arguments: Workout_name(workout_name: workout)
                     );
                   },
                   backgroundColor: Colors.green,

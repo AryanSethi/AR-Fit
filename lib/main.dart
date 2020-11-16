@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       title: "Pose Estimation",
       theme: ThemeData(
-        primarySwatch: Colors.blue
+        primarySwatch: Colors.green
       ),
       home: MySplashScreen(),
       debugShowCheckedModeBanner: false,
