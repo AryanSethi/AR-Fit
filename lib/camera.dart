@@ -9,6 +9,7 @@ typedef void Callback(List<dynamic> list);
 class CameraScreen extends StatefulWidget {
   final List cameras;
   List<dynamic> _recognitions;
+
   CameraScreen(this.cameras);
 
   @override
@@ -27,17 +28,15 @@ class _CameraScreen extends State<CameraScreen> {
       print('No camera is found');
     } else {
       controller = new CameraController(
-        widget.cameras[0],
-        ResolutionPreset.high,
-        enableAudio: false
-      );
+          widget.cameras[0], ResolutionPreset.high,
+          enableAudio: false);
       controller.initialize().then((_) {
         if (!mounted) {
           return;
         }
         setState(() {});
-        controller.startImageStream((CameraImage img){
-          if(!isDetecting){
+        controller.startImageStream((CameraImage img) {
+          if (!isDetecting) {
             isDetecting = true;
 
             Tflite.runPoseNetOnFrame(
@@ -45,10 +44,10 @@ class _CameraScreen extends State<CameraScreen> {
                 return plane.bytes;
               }).toList(),
               imageHeight: img.height,
-              imageWidth:  img.width ,
+              imageWidth: img.width,
               numResults: 1,
             ).then((recognitions) {
-              if(mounted){
+              if (mounted) {
                 setState(() {
                   widget._recognitions = recognitions;
                 });
@@ -57,25 +56,22 @@ class _CameraScreen extends State<CameraScreen> {
             });
           }
         });
-
       });
     }
   }
 
-
-
   @override
-  void dispose(){
+  void dispose() {
     controller?.dispose();
     super.dispose();
   }
 
-
-
   ///      B   U   I   L   D           M    E    T    H    O    D
   @override
   Widget build(BuildContext context) {
-    final Workout_name args = ModalRoute.of(context).settings.arguments;         /// ARGS SUCCESSFULLY RECEIVED HERE
+    final Workout_name args = ModalRoute.of(context).settings.arguments;
+
+    /// ARGS SUCCESSFULLY RECEIVED HERE
     String w_n = args.workout_name;
     var screenSize = MediaQuery.of(context).size;
     if (controller == null || !controller.value.isInitialized) {
@@ -92,22 +88,14 @@ class _CameraScreen extends State<CameraScreen> {
           maxWidth: screenSize.width,
           child: CameraPreview(controller),
         ),
-        Keypoints(widget._recognitions,previewH,previewW),
-        w_n !=null ?
-            Text(w_n):
-            Text('_')
+        Keypoints(widget._recognitions, previewH, previewW),
+        w_n != null
+            ? Text(
+                w_n,
+                style: TextStyle(decoration: TextDecoration.none),
+              )
+            : null
       ],
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-

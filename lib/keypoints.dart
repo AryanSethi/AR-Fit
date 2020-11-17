@@ -47,7 +47,8 @@ class Keypoints extends StatelessWidget{
                 "●",
                 style: TextStyle(
                   color: Color.fromRGBO(255, 0, 0, 1.0),
-                  fontSize: 30.0,
+                  fontSize: 10.0,
+                  decoration: TextDecoration.none
                 ),
               ),
             ),
@@ -55,7 +56,7 @@ class Keypoints extends StatelessWidget{
         }).toList();
 
         lists..addAll(list);
-      }): print("Wait") ;
+      }): null ;
 
       return lists;
     }

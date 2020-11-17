@@ -1,4 +1,5 @@
 import 'package:Smart_Workouts/camera.dart';
+import 'package:Smart_Workouts/picker.dart';
 import 'package:Smart_Workouts/workouts.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,7 +9,7 @@ import 'package:Smart_Workouts/splashscreen.dart';
 
 List<CameraDescription> cameras;
 
-Future main() async{
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
     cameras = await availableCameras();
@@ -18,25 +19,21 @@ Future main() async{
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.black
-     )
-    );
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.black));
 
     return MaterialApp(
       title: "Pose Estimation",
-      theme: ThemeData(
-        primarySwatch: Colors.green
-      ),
+      theme: ThemeData(primarySwatch: Colors.green),
       home: MySplashScreen(),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
-        '/All Workouts':(context) => Workouts(),
-        '/Camera':(context)=> CameraScreen(cameras)
+        '/All Workouts': (context) => Workouts(),
+        '/Camera': (context) => CameraScreen(cameras),
+        '/Picker': (context) => Picker()
       },
     );
   }
