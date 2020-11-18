@@ -35,7 +35,12 @@ class _PickerState extends State<Picker> {
           print(widget._recognitions!=null);
         });
       }
-    });
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context)=> Analyser(file, widget._recognitions)));
+     }
+
+    );
   }
 
   Future<Widget> _openFileExplorer(context, height, width) async {
@@ -51,9 +56,6 @@ class _PickerState extends State<Picker> {
         print("Unsupported operation" + e.toString());
       }
     }
-    Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context)=> test(file, widget._recognitions)));
   }
 
   @override
@@ -72,7 +74,7 @@ class _PickerState extends State<Picker> {
           onPressed: () {
             _openFileExplorer(context, screenSize.height, screenSize.width);
           },
-          child: Text('Analyse Photo/Video',
+          child: Text('Analyse a Photo',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: screenSize.width * 0.07,
@@ -83,10 +85,10 @@ class _PickerState extends State<Picker> {
 }
 
 
-class test extends StatelessWidget{
+class Analyser extends StatelessWidget{
   File file;
   List<dynamic> _recognitions;
-  test(this.file,this._recognitions);
+  Analyser(this.file,this._recognitions);
 
   @override
   Widget build(BuildContext context) {
@@ -94,8 +96,12 @@ class test extends StatelessWidget{
     return Scaffold(
       body: Stack(
         children: [
-          Image.file(
-              file
+          Container(
+            child: Image.file(
+                file,
+                height: screensize.height,
+                width: screensize.width,
+            ),
           ),
           Keypoints(_recognitions,screensize.height,screensize.width)
         ],
