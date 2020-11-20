@@ -39,7 +39,6 @@ class _PickerState extends State<Picker> {
           context,
           MaterialPageRoute(builder: (context)=> Analyser(file, widget._recognitions)));
      }
-
     );
   }
 
