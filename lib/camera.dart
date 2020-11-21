@@ -1,3 +1,4 @@
+import 'package:Smart_Workouts/correction_ratios.dart';
 import 'package:Smart_Workouts/keypoints.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
@@ -50,6 +51,7 @@ class _CameraScreen extends State<CameraScreen> {
               if (mounted) {
                 setState(() {
                   widget._recognitions = recognitions;
+                  // TODO: make a Correction instance here and find correctness percentage
                 });
               }
               isDetecting = false;
@@ -71,7 +73,7 @@ class _CameraScreen extends State<CameraScreen> {
   Widget build(BuildContext context) {
     final Workout_name args = ModalRoute.of(context).settings.arguments;
 
-    /// ARGS SUCCESSFULLY RECEIVED HERE
+    /// ARGS(Workout name) RECEIVED HERE
     String w_n = args.workout_name;
     var screenSize = MediaQuery.of(context).size;
     if (controller == null || !controller.value.isInitialized) {
