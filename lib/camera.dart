@@ -51,7 +51,6 @@ class _CameraScreen extends State<CameraScreen> {
               if (mounted) {
                 setState(() {
                   widget._recognitions = recognitions;
-                  // TODO: make a Correction instance here and find correctness percentage
                 });
               }
               isDetecting = false;
@@ -75,6 +74,14 @@ class _CameraScreen extends State<CameraScreen> {
 
     /// ARGS(Workout name) RECEIVED HERE
     String w_n = args.workout_name;
+
+    if (widget._recognitions !=null) {
+      if(widget._recognitions.isEmpty == false){
+        Correction test=Correction(widget._recognitions,w_n);
+        List<dynamic> _points = test.find_points();
+      }
+    }
+
     var screenSize = MediaQuery.of(context).size;
     if (controller == null || !controller.value.isInitialized) {
       return Container();
@@ -90,13 +97,7 @@ class _CameraScreen extends State<CameraScreen> {
           maxWidth: screenSize.width,
           child: CameraPreview(controller),
         ),
-        Keypoints(widget._recognitions, previewH, previewW),
-        w_n != null
-            ? Text(
-                w_n,
-                style: TextStyle(decoration: TextDecoration.none),
-              )
-            : null
+        Keypoints(widget._recognitions, previewH, previewW)
       ],
     );
   }

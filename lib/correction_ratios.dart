@@ -20,13 +20,45 @@ import 'dart:math';
 
 class Correction{
   List<dynamic> _recognitions;
-  Correction(this._recognitions);
+  List<dynamic> _points = []; // List of lists of x,y like ->   [ [x1,y1],[x2,y2],[x3,y3]... ]
+  List<double> _ratios;
+  String w_n;
 
+  Correction(this._recognitions,this.w_n);
 
-  print_recs(){
+  List<dynamic> find_points(){
+    if(_recognitions!=null){
+      for(int i=0;i<=16;i++){
+        double x= _recognitions[0]['keypoints'][i]['x'];
+        double y= _recognitions[0]['keypoints'][i]['y'];
+        List<double> temp = [x,y];
+        _points.insert(i, temp);
+      }
+      return _points;
+    }
+  }
+
+ void print_recs(){
     int i;
     for(i=0;i<=16;i++){
-      print('Part ${i} = ${_recognitions[0]['keypoints'][i]['part']}');
+      print('Part ${i} = ${_recognitions[0]['keypoints'][i]['x']}');
+      print('Part ${i} = ${_recognitions[0]['keypoints'][i]['y']}');
     }
+  }
+
+  String wname(){
+    return w_n;
+  }
+
+  double distance(double x1, double y1 ,double x2,double y2){
+    double s1 = pow((x2-x1).abs(),2);
+    double s2 = pow((y1-y1).abs(),2);
+    double d= ((s2-s1).abs());
+    print('Distance is $d');     //TODO : remove this print statement
+    return d;
+  }
+
+  mountain_pose(){
+
   }
 }
