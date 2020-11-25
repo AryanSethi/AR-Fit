@@ -39,7 +39,7 @@ var workout_method = {
 };
 
 
-/// CLASS FOR PASSING WORKOUT NAME ARGUMENT TO THE NAVIGATOR
+// CLASS FOR PASSING WORKOUT NAME ARGUMENT TO THE NAVIGATOR
 class Workout_name{
   final String workout_name;
   Workout_name({this.workout_name=null});

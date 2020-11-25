@@ -78,7 +78,8 @@ class _CameraScreen extends State<CameraScreen> {
     if (widget._recognitions !=null) {
       if(widget._recognitions.isEmpty == false){
         Correction test=Correction(widget._recognitions,w_n);
-        List<dynamic> _points = test.find_points();
+        List _ratios = test.find_ratios();
+        print(_ratios);
       }
     }
 

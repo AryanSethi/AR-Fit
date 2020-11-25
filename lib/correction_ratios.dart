@@ -37,10 +37,6 @@ class Correction{
   List<double> _ratios;
   String w_n;
 
-  List<double> find_ratios(){
-
-  }
-
   Correction(this._recognitions,this.w_n){
     if(_recognitions!=null){
       for(int i=0;i<=16;i++){
@@ -49,7 +45,24 @@ class Correction{
         List<double> temp = [x,y];
         _points.insert(i, temp);
       }
+      print(_points);
     }
+  }
+
+  List<double> find_ratios(){
+    List<double> ratios=[];
+    for(int ratio_preset=0;ratio_preset<=9;ratio_preset++){
+      List p1=_points[ratio_presets[ratio_preset][0][0]-1];
+      List p2=_points[ratio_presets[ratio_preset][0][1]-1];
+      List p3=_points[ratio_presets[ratio_preset][1][0]-1];
+      List p4=_points[ratio_presets[ratio_preset][1][1]-1];
+
+      double d1 = find_distance(p1[0],p1[1],p2[0],p2[1]);
+      double d2 = find_distance(p3[0],p3[1],p4[0],p4[1]);
+      double ratio = d1/d2;
+      ratios.insert(ratio_preset, ratio);
+    }
+    return ratios;
   }
 
   List<dynamic> find_points(){
@@ -77,10 +90,9 @@ class Correction{
   }
 
   double find_distance(double x1, double y1 ,double x2,double y2){
-    double s1 = pow((x2-x1).abs(),2);
-    double s2 = pow((y1-y1).abs(),2);
+    double s1 = (x2-x1).abs();
+    double s2 = (y2-y1).abs();
     double d= ((s2-s1).abs());
-    print('Distance is $d');     //TODO : remove this print statement
     return d;
   }
 
