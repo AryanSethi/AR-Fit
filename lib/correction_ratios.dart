@@ -18,10 +18,10 @@
 
 import 'dart:math';
 
-List<dynamic> ratio_presets=[
-  [  [6,14],[12,16]  ],
+List<dynamic> ratio_presets=[     // points that are to be used to find ratios, for eg.
+  [  [6,14],[12,16]  ],           // ratio of ( D(6,14) and D(12,16) )   where D(6,14) is the distance between point 6 and 14 in _points list
   [  [5,13],[11,15]  ],
-  [  [1,14],[16,10]  ],
+  [  [6,14],[16,10]  ],
   [  [5,13],[15,9]   ],
   [  [4,12],[14,10]  ],
   [  [3,11],[13,9]   ],

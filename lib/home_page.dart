@@ -23,14 +23,23 @@ show_dialogue(context) {
       context: context,
       builder: (BuildContext context) {
         return Container(
+          margin: EdgeInsets.all(2.0),
+          padding: EdgeInsets.all(2.0),
           child: AssetGiffyDialog(
             image: Image.asset('assets/help_stick.gif', fit: BoxFit.cover),
             title: Text("Keep in Mind",
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w800)),
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w800
+                )
+            ),
             description: Text(
               "● Only one person should be in frame\n● Use Portrait Mode only\n● Recording should be done as instructed",
               style: TextStyle(
-                  color: Colors.blueAccent, fontWeight: FontWeight.w600),
+                  color: Colors.blueAccent,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12.0
+              ),
               textAlign: TextAlign.center,
             ),
             entryAnimation: EntryAnimation.BOTTOM,

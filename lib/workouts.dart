@@ -15,13 +15,27 @@ var workout_descriptions = {
 };
 
 var workout_method = {
-  "Mountain Pose" : "DO THIS DO THAT DO THIS",
-  "Raised Arms Pose" : "YE BHI SAHI HAI BC",
-  "Standing Forward Bend" : "KARLO BC YE BHI",
-  "Garland Pose" : "Aid your Digestion and strengthen your metabolism.",
-  "Lunge" : "KARLO BC YE BHI",
-  "Plank" : "KARLO BC YE BHI",
-  "Seated Forward Bend" : "KARLO BC YE BHI",
+  "Mountain Pose" : "Stand with your feet together and your arms at your sides. "
+      "Press your weight evenly across the balls and arches of your feet. Breathe steadily and rhythmically. Draw your awareness inward.",
+
+  "Raised Arms Pose" : "Stand erect and raise both the hands above the head. Let there be shoulders length between the two arms. "
+      "Bend the trunk and head backwards to create a slight curve. ",
+
+  "Standing Forward Bend" : "Stand with your feet together. Bend your knees slightly and fold your torso over your legs, moving from the hips, "
+      "not the lower back. Place your hands next to your feet or on the ground.",
+
+  "Garland Pose" : "Stand in a mountain pose. Bend your knees and lower your hips, coming into a squat. Separate your thighs "
+      "so they are slightly wider than your torso and keep your feet close",
+
+  "Lunge" : "Start by standing up tall. Step forward with one foot until your leg reaches a 90-degree angle. Your rear knee should remain "
+      "parallel to the ground and your front knee shouldn’t go beyond your toes.",
+
+  "Plank" : "Start in a push-up position and then put all your body weight on your elbows with hands down, insteam of the hands."
+      "The back should be straight and your core should feel the pressure",
+
+  "Seated Forward Bend" : "Sit up with the legs stretched out straight in front of you, keeping the spine erect and toes flexed toward you."
+      "Breathing in, raise both arms, slowly bend and place them on your legs",
+
 };
 
 
@@ -77,7 +91,7 @@ create_card(context, String workout) {
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w400,
-                        fontSize: 13
+                        fontSize: 14
                     ),
                   )
               )
@@ -104,6 +118,7 @@ show_dialogue(context,String workout) {
                 image: Image.asset(image_name, fit: BoxFit.cover),
                 title: Text(workout,
                     style: TextStyle(
+                        color: Colors.green,
                         fontSize: 18.0,
                         fontWeight: FontWeight.w800
                     )
@@ -111,8 +126,9 @@ show_dialogue(context,String workout) {
                 description: Text(
                   workout_method[workout],
                   style: TextStyle(
-                      color: Colors.blueAccent,
-                      fontWeight: FontWeight.w600
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 10.0
                   ),
                   textAlign: TextAlign.center,
                 ),
