@@ -75,11 +75,12 @@ class _CameraScreen extends State<CameraScreen> {
     /// ARGS(Workout name) RECEIVED HERE
     String w_n = args.workout_name;
 
+    double _loss=0;
     if (widget._recognitions !=null) {
       if(widget._recognitions.isEmpty == false){
         Correction test=Correction(widget._recognitions,w_n);
         List _ratios = test.find_ratios();
-        print(_ratios);
+         _loss = test.mountain_pose(_ratios);
       }
     }
 
@@ -98,7 +99,17 @@ class _CameraScreen extends State<CameraScreen> {
           maxWidth: screenSize.width,
           child: CameraPreview(controller),
         ),
-        Keypoints(widget._recognitions, previewH, previewW)
+        Keypoints(widget._recognitions, previewH, previewW),
+        Padding(
+          padding: EdgeInsets.only(left: 20.0, top: 20.0),
+          child: Text(
+            _loss!=null?_loss.toString():'Fetching',
+          style: TextStyle(
+            color: _loss<=100?Colors.green:Colors.red,
+            fontSize: 30.0,
+            decoration: TextDecoration.none
+          ),),
+        )
       ],
     );
   }

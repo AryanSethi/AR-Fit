@@ -18,6 +18,8 @@
 
 import 'dart:math';
 
+import 'package:Smart_Workouts/standard_ratios.dart';
+
 List<dynamic> ratio_presets=[     // points that are to be used to find ratios, for eg.
   [  [6,14],[12,16]  ],           // ratio of ( D(6,14) and D(12,16) )   where D(6,14) is the distance between point 6 and 14 in _points list
   [  [5,13],[11,15]  ],
@@ -45,7 +47,6 @@ class Correction{
         List<double> temp = [x,y];
         _points.insert(i, temp);
       }
-      print(_points);
     }
   }
 
@@ -94,6 +95,16 @@ class Correction{
     double s2 = (y2-y1).abs();
     double d= ((s2-s1).abs());
     return d;
+  }
+
+  double mountain_pose(List ratios){
+    double temp=0;
+    for(int i=0;i<=9;i++){
+      var dif = (mountain_pose_standard[i]-ratios[i]).abs()/mountain_pose_standard[i];
+      temp = temp+dif;
+    }
+    temp = temp*10;
+    return temp;
   }
 
 
