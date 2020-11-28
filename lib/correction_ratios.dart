@@ -86,9 +86,6 @@ class Correction{
     }
   }
 
-  String w_name(){
-    return w_n;
-  }
 
   double find_distance(double x1, double y1 ,double x2,double y2){
     double s1 = (x2-x1).abs();
@@ -97,7 +94,7 @@ class Correction{
     return d;
   }
 
-  double mountain_pose(List ratios){
+  double correction(List ratios){
     double temp=0;
     for(int i=0;i<=9;i++){
       var dif = (mountain_pose_standard[i]-ratios[i]).abs()/mountain_pose_standard[i];

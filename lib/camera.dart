@@ -80,7 +80,8 @@ class _CameraScreen extends State<CameraScreen> {
       if(widget._recognitions.isEmpty == false){
         Correction test=Correction(widget._recognitions,w_n);
         List _ratios = test.find_ratios();
-         _loss = test.mountain_pose(_ratios);
+        _loss = test.correction(_ratios);
+        print(_ratios);
       }
     }
 
