@@ -1,0 +1,1108 @@
+format 222
+"Gym_trainer"
+  revision 7
+  modified_by 45 "HP"
+
+
+  
+  // class settings
+  default_attribute_visibility private default_relation_visibility private default_operation_visibility public
+  
+  classdiagramsettings draw_all_relations yes hide_attributes no hide_operations no hide_getset_operations no hide_ports no show_members_full_definition no show_members_visibility no show_members_stereotype no show_members_context no show_members_multiplicity no show_members_initialization no show_attribute_modifiers no member_max_width 127 show_parameter_dir yes show_parameter_name yes package_name_in_tab no class_drawing_mode natural drawing_language uml show_context_mode no auto_label_position yes show_relation_modifiers no show_relation_visibility no show_infonote no shadow yes gradient none show_stereotype_properties no end
+  
+  classcompositediagramsettings auto_label_position yes draw_all_relations yes shadow yes gradient none end
+  
+  usecasediagramsettings package_name_in_tab no show_context_mode no auto_label_position yes draw_all_relations yes class_drawing_mode actor shadow yes gradient none show_stereotype_properties no end
+  
+  sequencediagramsettings show_full_operations_definition no show_class_of_operation no write_horizontally yes instances_drawing_mode natural drawing_language uml draw_all_relations yes shadow yes gradient none show_stereotype_properties no show_class_context_mode no show_msg_context_mode no end
+  
+  collaborationdiagramsettings show_full_operations_definition no show_class_of_operation no show_hierarchical_rank no write_horizontally yes instances_drawing_mode natural drawing_language uml package_name_in_tab no show_class_pack_context_mode no show_msg_context_mode no draw_all_relations yes shadow yes gradient none show_stereotype_properties no end
+  
+  objectdiagramsettings write_horizontally yes package_name_in_tab no show_class_pack_context_mode no auto_label_position yes draw_all_relations yes shadow yes gradient none show_stereotype_properties no end
+  
+  objectcompositediagramsettings auto_label_position yes draw_all_relations yes shadow yes gradient none end
+  
+  componentdiagramsettings package_name_in_tab no show_context_mode no auto_label_position yes draw_all_relations yes shadow yes gradient none
+   draw_component_as_icon no show_component_req_prov no show_component_rea no show_stereotype_properties no end
+  
+  deploymentdiagramsettings package_name_in_tab no show_context_mode no write_horizontally yes auto_label_position yes draw_all_relations yes shadow yes gradient none
+   draw_component_as_icon no show_component_req_prov no show_component_rea no show_stereotype_properties no end
+  
+  statediagramsettings package_name_in_tab no show_context_mode no auto_label_position yes write_label_horizontally yes show_trans_definition no draw_all_relations yes shadow yes gradient none
+   show_activities yes region_horizontally yes drawing_language uml show_stereotype_properties no end
+  
+  activitydiagramsettings package_name_in_tab no show_context_mode no show_opaque_action_definition no auto_label_position yes write_label_horizontally no draw_all_relations yes shadow yes gradient none
+   show_infonote yes drawing_language uml show_stereotype_properties no end
+  
+  class_color yellow duration_color transparent continuation_color gray note_color blue fragment_color transparent subject_color transparent usecase_color yellow package_color transparent component_color green artifact_color green deploymentnode_color gray state_color yellow stateaction_color transparent activity_color transparent activityregion_color transparent activitypartition_color transparent activityaction_color transparent parameterpin_color white generalization_color black 
+  dpi 96
+  font_size 8
+  diagram_format A4
+
+  image_root_dir ""
+
+
+  mark_for_import
+  
+  classview 128173 "MyAPP"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 128173 "MyApp"
+      classdiagramsettings draw_all_relations no member_max_width 0 end
+      size A4
+    end
+
+    class 128173 "MyApp"
+      abstract visibility public 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 134573 "MaterialApp"
+	public explicit_return_type ""
+	multiplicity "1"
+	nparams 0
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 128301 "MySplashScreeen"
+      abstract visibility private 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 134701 "createState"
+	public explicit_return_type ""
+	multiplicity "1"
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 128045 // <generalisation>
+	relation 128045 ---|>
+	  a public
+	    classrelation_ref 128045 // <generalisation>
+	  b parent class_ref 128173 // MyApp
+      end
+
+      classrelation 128557 // <composition>
+	relation_ref 128429 // <composition>
+      end
+
+      classrelation 128685 // <composition>
+	relation 128557 *---
+	  a role_name "" private
+	    classrelation_ref 128685 // <composition>
+	  b role_name "" private
+	    classrelation_ref 128813 // <composition>
+      end
+    end
+
+    class 128429 "_SplashScreenState"
+      abstract active visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 134573 "res"
+	public explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 134829 "loadModel"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 134957 "HomePage"
+	public explicit_return_type ""
+	multiplicity "1"
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 128429 // <composition>
+	relation 128429 *---
+	  a role_name "" private
+	    classrelation_ref 128429 // <composition>
+	  b role_name "" private
+	    classrelation_ref 128557 // <composition>
+      end
+
+      classrelation 128813 // <composition>
+	relation_ref 128557 // <composition>
+      end
+
+      classrelation 129069 // <association>
+	relation 128813 ----
+	  a role_name "" private
+	    classrelation_ref 129069 // <association>
+	  b role_name "" private
+	    classrelation_ref 129197 // <association>
+      end
+    end
+
+    class 128557 "HomePage"
+      abstract visibility private 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 135085 "createState"
+	public explicit_return_type ""
+	multiplicity "1"
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 128941 // <generalisation>
+	relation 128685 ---|>
+	  a public
+	    classrelation_ref 128941 // <generalisation>
+	  b parent class_ref 128173 // MyApp
+      end
+
+      classrelation 129197 // <association>
+	relation_ref 128813 // <association>
+      end
+
+      classrelation 129325 // <composition>
+	relation 128941 *---
+	  a role_name "" private
+	    classrelation_ref 129325 // <composition>
+	  b role_name "" private
+	    classrelation_ref 129453 // <composition>
+      end
+    end
+
+    class 128685 "_HomePage"
+      abstract active visibility public 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 134701 "Random"
+	private explicit_type "Random"
+	multiplicity "1"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 134829 "screenSize"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 135213 "Picker"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 129453 // <composition>
+	relation_ref 128941 // <composition>
+      end
+
+      classrelation 129709 // <aggregation>
+	relation_ref 129069 // <aggregation>
+      end
+
+      classrelation 129837 // <aggregation>
+	relation 129197 o---
+	  a role_name "" private
+	    classrelation_ref 129837 // <aggregation>
+	  b role_name "" private
+	    classrelation_ref 129965 // <aggregation>
+      end
+    end
+
+    class 128813 "Picker"
+      abstract visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 135341 "createState"
+	public explicit_return_type ""
+	multiplicity "1"
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 129581 // <aggregation>
+	relation 129069 o---
+	  a role_name "" private
+	    classrelation_ref 129581 // <aggregation>
+	  b role_name "" private
+	    classrelation_ref 129709 // <aggregation>
+      end
+
+      classrelation 129965 // <aggregation>
+	relation_ref 129197 // <aggregation>
+      end
+
+      classrelation 130093 // <aggregation>
+	relation 129325 o---
+	  a role_name "" private
+	    classrelation_ref 130093 // <aggregation>
+	  b role_name "" private
+	    classrelation_ref 130221 // <aggregation>
+      end
+
+      classrelation 130349 // <composition>
+	relation 129453 *---
+	  a role_name "" private
+	    classrelation_ref 130349 // <composition>
+	  b role_name "" private
+	    classrelation_ref 130477 // <composition>
+      end
+    end
+
+    class 128941 "_PickerState"
+      abstract visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 141357 "random"
+	private explicit_type "Random"
+	multiplicity "1*"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 141485 "_path"
+	private explicit_type "string"
+	multiplicity "1"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 141613 "_pickingType"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 141741 "_extensions"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 141869 "file"
+	private explicit_type "File"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 141869 "pose_est"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 141997 "_openFileExplorer"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 130221 // <aggregation>
+	relation_ref 129325 // <aggregation>
+      end
+
+      classrelation 130477 // <composition>
+	relation_ref 129453 // <composition>
+      end
+    end
+
+    class 135469 "CameraScreen"
+      abstract visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 142509 "cameras"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 142637 "_recognition"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 142765 "createScreen"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 128173 // <generalisation>
+	relation 128173 ---|>
+	  a public
+	    classrelation_ref 128173 // <generalisation>
+	  b parent class_ref 128173 // MyApp
+      end
+
+      classrelation 131757 // <generalisation>
+	relation 130349 ---|>
+	  a public
+	    classrelation_ref 131757 // <generalisation>
+	  b parent class_ref 135981 // Workout_name
+      end
+
+      classrelation 132013 // <composition>
+	relation_ref 130477 // <composition>
+      end
+
+      classrelation 132141 // <composition>
+	relation 130605 *---
+	  a role_name "" private
+	    classrelation_ref 132141 // <composition>
+	  b role_name "" private
+	    classrelation_ref 132269 // <composition>
+      end
+
+      classrelation 132653 // <realization>
+	relation 130989 -_-|>
+	  a public
+	    classrelation_ref 132653 // <realization>
+	  b parent class_ref 135853 // Workouts
+      end
+
+      classrelation 133933 // <aggregation>
+	relation_ref 131757 // <aggregation>
+      end
+    end
+
+    class 135597 "_CameraScreen"
+      abstract active visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 142765 "controller"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 142893 "isDetecting"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 142893 "Tflite.runPoseNetOnFrame"
+	private explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 143021 "dispose"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 131885 // <composition>
+	relation 130477 *---
+	  a role_name "" private
+	    classrelation_ref 131885 // <composition>
+	  b role_name "" private
+	    classrelation_ref 132013 // <composition>
+      end
+
+      classrelation 132269 // <composition>
+	relation_ref 130605 // <composition>
+      end
+    end
+
+    class 135725 "Correction"
+      abstract visibility private 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 141997 "_recognition"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 142125 "_points"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 142253 "_ratios"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 142381 "w_n"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 142125 "Correction"
+	stereotype "Constructor"
+	public explicit_return_type ""
+	multiplicity "1"
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 142253 "find_ratios"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 142381 "print_recs"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 142509 "find_distance"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 142637 "correction"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 130605 // <generalisation>
+	relation 129581 ---|>
+	  a public
+	    classrelation_ref 130605 // <generalisation>
+	  b parent class_ref 128941 // _PickerState
+      end
+
+      classrelation 130861 // <association>
+	relation 129837 ----
+	  a role_name "" private
+	    classrelation_ref 130861 // <association>
+	  b role_name "" private
+	    classrelation_ref 130989 // <association>
+      end
+    end
+
+    class 135853 "Workouts"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 143149 "create_card"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 128301 // <generalisation>
+	relation 128301 ---|>
+	  a public
+	    classrelation_ref 128301 // <generalisation>
+	  b parent class_ref 128173 // MyApp
+      end
+
+      classrelation 130989 // <association>
+	relation_ref 129837 // <association>
+      end
+
+      classrelation 131245 // <composition>
+	relation_ref 129965 // <composition>
+      end
+
+      classrelation 131373 // <composition>
+	relation 130093 *---
+	  a role_name "" private
+	    classrelation_ref 131373 // <composition>
+	  b role_name "" private
+	    classrelation_ref 131501 // <composition>
+      end
+
+      classrelation 132525 // <dependency>
+	relation 130861 -_->
+	  a public
+	    classrelation_ref 132525 // <dependency>
+	  b parent class_ref 135469 // CameraScreen
+      end
+
+      classrelation 133805 // <aggregation>
+	relation 131757 o---
+	  a role_name "" private
+	    classrelation_ref 133805 // <aggregation>
+	  b role_name "" private
+	    classrelation_ref 133933 // <aggregation>
+      end
+    end
+
+    class 135981 "Workout_name"
+      active visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 143021 "workout_name"
+	private explicit_type "list"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 143277 "Workout_name"
+	public explicit_return_type "Constructor"
+	multiplicity "1"
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 131117 // <composition>
+	relation 129965 *---
+	  a role_name "" private
+	    classrelation_ref 131117 // <composition>
+	  b role_name "" private
+	    classrelation_ref 131245 // <composition>
+      end
+
+      classrelation 131501 // <composition>
+	relation_ref 130093 // <composition>
+      end
+
+      classrelation 131629 // <unidirectional association>
+	relation 130221 --->
+	  a role_name "" private
+	    classrelation_ref 131629 // <unidirectional association>
+	  b parent class_ref 135469 // CameraScreen
+      end
+
+      classrelation 132397 // <unidirectional association>
+	relation 130733 --->
+	  a role_name "" private
+	    classrelation_ref 132397 // <unidirectional association>
+	  b parent class_ref 135469 // CameraScreen
+      end
+    end
+
+    class 136109 "Analyser"
+      abstract visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 143149 "file"
+	private explicit_type "File"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 143277 "_recognition"
+	private explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 143405 "Keypoints"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 132781 // <generalisation>
+	relation 131117 ---|>
+	  a public
+	    classrelation_ref 132781 // <generalisation>
+	  b parent class_ref 128941 // _PickerState
+      end
+
+      classrelation 133165 // <composition>
+	relation_ref 131373 // <composition>
+      end
+
+      classrelation 133421 // <aggregation>
+	relation_ref 131501 // <aggregation>
+      end
+
+      classrelation 133549 // <aggregation>
+	relation 131629 o---
+	  a role_name "" private
+	    classrelation_ref 133549 // <aggregation>
+	  b role_name "" private
+	    classrelation_ref 133677 // <aggregation>
+      end
+    end
+
+    class 136237 "Keypoints"
+      abstract visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 143405 "results"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 143533 "previewH"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 143661 "previewW"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 143533 "_renderKeypoints"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 130733 // <generalisation>
+	relation 129709 ---|>
+	  a public
+	    classrelation_ref 130733 // <generalisation>
+	  b parent class_ref 128941 // _PickerState
+      end
+
+      classrelation 132909 // <realization>
+	relation 131245 -_-|>
+	  a public
+	    classrelation_ref 132909 // <realization>
+	  b parent class_ref 136109 // Analyser
+      end
+
+      classrelation 133037 // <composition>
+	relation 131373 *---
+	  a role_name "" private
+	    classrelation_ref 133037 // <composition>
+	  b role_name "" private
+	    classrelation_ref 133165 // <composition>
+      end
+
+      classrelation 133293 // <aggregation>
+	relation 131501 o---
+	  a role_name "" private
+	    classrelation_ref 133293 // <aggregation>
+	  b role_name "" private
+	    classrelation_ref 133421 // <aggregation>
+      end
+
+      classrelation 133677 // <aggregation>
+	relation_ref 131629 // <aggregation>
+      end
+    end
+
+    state 128045 "State_diag"
+      stereotype "machine"
+      statediagram 134701 "MyApp"
+	statediagramsettings draw_all_relations no
+	 end
+	size A4
+      end
+
+      pseudostate 128045 initial 
+	transition 128045 "<transition>"
+	  on state_ref 134573 // App Idle
+	  external 
+	end
+      end
+
+      pseudostate 128173 final 
+      end
+
+      state 134573 "App Idle"
+	  uml_on_entry "splash screen	"
+	  uml_on_exit "Home Page"
+	specification operation_ref 134573 // MaterialApp
+	transition 128173 "<transition>"
+	  on pseudostate_ref 134701 // fork
+	  external 
+	end
+
+	transition 128429 "<transition>"
+	  on state_ref 134701 // Home Page
+	  external 
+	end
+      end
+
+      state 134701 "Home Page"
+	transition 128557 "<transition>"
+	  on pseudostate_ref 134701 // fork
+	  external 
+	end
+      end
+
+      pseudostate 134701 fork 
+	transition 128301 "<transition>"
+	  on state_ref 134701 // Home Page
+	  external 
+	end
+
+	transition 128685 "<transition>"
+	  on state_ref 134829 // All workouts
+	  external 
+	end
+
+	transition 128813 "<transition>"
+	  on state_ref 134957 // Analyze a Photo
+	  external 
+	end
+
+	transition 129453 "<transition>"
+	  on state_ref 134957 // Analyze a Photo
+	  external 
+	end
+
+	transition 129581 "<transition>"
+	  on state_ref 134957 // Analyze a Photo
+	  external 
+	end
+      end
+
+      state 134829 "All workouts"
+	transition 128941 "<transition>"
+	  on state_ref 135085 // Pose Select
+	  external 
+	end
+      end
+
+      state 134957 "Analyze a Photo"
+	transition 129709 "<transition>"
+	  on stateaction_ref 128301
+	  external 
+	end
+      end
+
+      state 135085 "Pose Select"
+	stateaction 128173
+	  stereotype "send-signal"
+	end
+
+	transition 129069 "<transition>"
+	  on state_ref 135213 // Pose Tutorial
+	  external 
+	end
+      end
+
+      stateaction 128045
+      end
+
+      state 135213 "Pose Tutorial"
+	transition 129197 "<transition>"
+	  on pseudostate_ref 128173 // final
+	  external 
+	end
+
+	transition 129325 "<transition>"
+	  on pseudostate_ref 128173 // final
+	  external 
+	end
+      end
+
+      stateaction 128301
+	stereotype "receive-signal"
+	uml "Input image"
+	transition 129837 "<transition>"
+	  on state_ref 135341 // Analysed Image
+	  external 
+	end
+      end
+
+      state 135341 "Analysed Image"
+	transition 129965 "<transition>"
+	  on pseudostate_ref 128173 // final
+	  external 
+	end
+      end
+    end
+  end
+end
