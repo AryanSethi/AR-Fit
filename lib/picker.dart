@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:Smart_Workouts/correction_ratios.dart';
 import 'package:Smart_Workouts/keypoints.dart';
 import 'package:Smart_Workouts/workouts.dart';
 import 'package:file_picker/file_picker.dart';
@@ -90,9 +91,22 @@ class Analyser extends StatelessWidget{
   List<dynamic> _recognitions;
   Analyser(this.file,this._recognitions);
 
+
   @override
   Widget build(BuildContext context) {
     var screensize= MediaQuery.of(context).size;
+
+
+    double _loss=0;
+    if (_recognitions !=null) {
+      if(_recognitions.isEmpty == false) {
+        Correction test = Correction(_recognitions, 'Mountain Pose');
+        List _ratios = test.find_ratios();
+        _loss = test.correction(_ratios);
+        print(_ratios);
+      }
+    }
+
     return Scaffold(
       body: Stack(
         children: [
@@ -103,7 +117,18 @@ class Analyser extends StatelessWidget{
                 width: screensize.width,
             ),
           ),
-          Keypoints(_recognitions,screensize.height,screensize.width)
+          Keypoints(_recognitions,screensize.height,screensize.width),
+          Padding(
+            padding: EdgeInsets.only(left: 40.0, top: 40.0),
+            child: Text(
+              _loss!=null?_loss.toString():'Fetching',
+              style: TextStyle(
+                  color: _loss<=100?Colors.green:Colors.red,
+                  fontSize: 30.0,
+                  decoration: TextDecoration.none
+              ),
+            ),
+          )
         ],
       )
     );

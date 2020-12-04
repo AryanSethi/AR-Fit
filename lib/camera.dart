@@ -5,6 +5,7 @@ import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
 import 'package:Smart_Workouts/workouts.dart';
 
+
 typedef void Callback(List<dynamic> list);
 
 class CameraScreen extends StatefulWidget {
@@ -79,9 +80,11 @@ class _CameraScreen extends State<CameraScreen> {
     if (widget._recognitions !=null) {
       if(widget._recognitions.isEmpty == false){
         Correction test=Correction(widget._recognitions,w_n);
-        List _ratios = test.find_ratios();
-        _loss = test.correction(_ratios);
-        print(_ratios);
+        if (w_n=='Mountain Pose') {
+          List _ratios = test.find_ratios();
+          _loss = test.correction(_ratios);
+          print(_ratios);
+        }
       }
     }
 
@@ -102,14 +105,15 @@ class _CameraScreen extends State<CameraScreen> {
         ),
         Keypoints(widget._recognitions, previewH, previewW),
         Padding(
-          padding: EdgeInsets.only(left: 20.0, top: 20.0),
+          padding: EdgeInsets.only(left: 40.0, top: 40.0),
           child: Text(
             _loss!=null?_loss.toString():'Fetching',
           style: TextStyle(
             color: _loss<=100?Colors.green:Colors.red,
             fontSize: 30.0,
             decoration: TextDecoration.none
-          ),),
+            ),
+          ),
         )
       ],
     );
