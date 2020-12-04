@@ -1,0 +1,130 @@
+format 222
+
+classcanvas 128045 class_ref 128173 // MyApp
+  classdiagramsettings member_max_width 0 end
+  xyz 289.9 6 2000
+end
+classcanvas 128173 class_ref 128301 // MySplashScreeen
+  classdiagramsettings member_max_width 0 end
+  xyz 71.5 67.7 2000
+end
+classcanvas 128301 class_ref 128429 // _SplashScreenState
+  classdiagramsettings member_max_width 0 end
+  xyz 54.4 163 2000
+end
+classcanvas 128557 class_ref 128685 // _HomePage
+  classdiagramsettings member_max_width 0 end
+  xyz 273.2 149 2000
+end
+classcanvas 128685 class_ref 128813 // Picker
+  classdiagramsettings member_max_width 0 end
+  xyz 276.2 257.6 2005
+end
+classcanvas 128813 class_ref 128941 // _PickerState
+  classdiagramsettings member_max_width 0 end
+  xyz 259.1 325.2 2000
+end
+classcanvas 128941 class_ref 135469 // CameraScreen
+  classdiagramsettings member_max_width 0 end
+  xyz 612.5 97.7 2000
+end
+classcanvas 129069 class_ref 135597 // _CameraScreen
+  classdiagramsettings member_max_width 0 end
+  xyz 575.1 226.8 2000
+end
+classcanvas 129197 class_ref 135725 // Correction
+  classdiagramsettings member_max_width 0 end
+  xyz 438.7 309.1 2000
+end
+classcanvas 129325 class_ref 135853 // Workouts
+  classdiagramsettings member_max_width 0 end
+  xyz 421 85 2000
+end
+classcanvas 129453 class_ref 135981 // Workout_name
+  classdiagramsettings member_max_width 0 end
+  xyz 414.6 209.3 2000
+end
+classcanvas 129581 class_ref 136109 // Analyser
+  classdiagramsettings member_max_width 0 end
+  xyz 93.9 335 2000
+end
+classcanvas 129709 class_ref 136237 // Keypoints
+  classdiagramsettings member_max_width 0 end
+  xyz 51.8 442.1 2000
+end
+classcanvas 130477 class_ref 128557 // HomePage
+  classdiagramsettings member_max_width 0 end
+  xyz 280.6 76 2005
+end
+relationcanvas 129837 relation_ref 128045 // <generalisation>
+  from ref 128173 z 2001 to ref 128045
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130093 relation_ref 128301 // <generalisation>
+  from ref 129325 z 2001 to ref 128045
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130349 relation_ref 128557 // <composition>
+  from ref 128173 z 2001 to ref 128301
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130605 relation_ref 128685 // <generalisation>
+  from ref 130477 z 2006 to ref 128045
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130733 relation_ref 128813 // <association>
+  from ref 128301 z 2006 to ref 130477
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130861 relation_ref 128941 // <composition>
+  from ref 130477 z 2006 to ref 128557
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131117 relation_ref 129197 // <aggregation>
+  decenter_end 521
+  from ref 128557 z 2006 to ref 128685
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131373 relation_ref 129453 // <composition>
+  from ref 128685 z 2006 to ref 128813
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131501 relation_ref 129581 // <generalisation>
+  from ref 129197 z 2001 to ref 128813
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132141 relation_ref 130093 // <composition>
+  from ref 129325 z 2001 to ref 129453
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132781 relation_ref 130605 // <composition>
+  from ref 128941 z 2001 to ref 129069
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133805 relation_ref 131117 // <generalisation>
+  from ref 129581 z 2001 to ref 128813
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134317 relation_ref 131629 // <aggregation>
+  from ref 129581 z 2001 to ref 129709
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134445 relation_ref 131757 // <aggregation>
+  from ref 129325 z 2001 to ref 128941
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end
